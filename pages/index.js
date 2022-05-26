@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Modal from "react-modal";
+import Image from "next/image";
 
 Modal.setAppElement("#__next");
 
@@ -19,9 +20,9 @@ export default function Home() {
         <div className="avatar"></div>
         <div className="profile">
           <div className="info">
-            <p> Erick Felipe </p>
+            <p> Your Name</p>
             <div className="position">
-              <p> Desenvolvedor Front End </p>
+              <p> Position </p>
             </div>
             <div className="profile-icons">
               <a onClick={toggleModal} target="_blank" rel="noreferrer">
@@ -37,6 +38,7 @@ export default function Home() {
                   className="modal"
                   overlayClassName="myoverlay"
                   closeTimeoutMS={100}
+                  onRequestClose={toggleModal}
                 >
                   <div className="closebutton">
                     <a href="#" onClick={toggleModal}>
@@ -46,6 +48,18 @@ export default function Home() {
                         style={{ width: 25, height: 25 }}
                       />
                     </a>
+                  </div>
+
+                  <div className="headerr">
+                    <p>Save my contact!</p>
+                  </div>
+                  <div className="body">
+                    <Image
+                      src="/images/qrcode.png"
+                      alt="qr-code-contato"
+                      width={250}
+                      height={250}
+                    />
                   </div>
                 </Modal>
               </a>
